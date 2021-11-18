@@ -1,17 +1,16 @@
+import { FunctionComponent } from "react";
+import { BlockWithTransactions } from "@ethersproject/abstract-provider";
 import { Container } from "./styles";
 import { Block } from "src/components";
 
-export const BlocksList = () => (
+interface BlocksListProps {
+  blocks: BlockWithTransactions[];
+}
+
+export const BlocksList: FunctionComponent<BlocksListProps> = ({ blocks }) => (
   <Container>
-    <Block />
-    <Block />
-    <Block />
-    <Block />
-    <Block />
-    <Block />
-    <Block />
-    <Block />
-    <Block />
-    <Block />
+    {blocks.map((block) => (
+      <Block key={block.hash} block={block} />
+    ))}
   </Container>
 );

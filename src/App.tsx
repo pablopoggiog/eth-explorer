@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <Container>
-      <BlocksList />
+      <BlocksList blocks={latestBlocks} />
     </Container>
   );
 };
@@ -60,4 +60,7 @@ const Container = styled.div`
   min-height: 100vh;
   background-color: #282c34;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
