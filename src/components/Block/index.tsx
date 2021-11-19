@@ -36,8 +36,6 @@ export const Block: FunctionComponent<BlockProps> = ({ block }) => {
           <Field>{block.hash}</Field>
           <Label>Number:</Label>
           <Field>{block.number}</Field>
-          <Label>Gas Used:</Label>
-          <Field>{getBigNumber(block.gasUsed)}</Field>
           <Label>Timestamp:</Label>
           <Field>{block.timestamp}</Field>
           <TransactionsList transactions={transactionsSendingETH} />
