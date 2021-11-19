@@ -1,7 +1,7 @@
 import { FunctionComponent, useState } from "react";
 import { BlockWithTransactions } from "@ethersproject/abstract-provider";
-import { ethers } from "ethers";
 import { TransactionsList } from "src/components";
+import { getBigNumber } from "src/utils";
 import {
   Collapsed,
   Container,
@@ -20,9 +20,6 @@ export const Block: FunctionComponent<BlockProps> = ({ block }) => {
   const [expanded, setExpanded] = useState<boolean>(false);
 
   const toggle = () => setExpanded(!expanded);
-
-  const getBigNumber = (value: ethers.BigNumber) =>
-    ethers.utils.formatEther(value);
 
   const transactionsSendingETH = block.transactions.filter(
     (transaction) => Number(getBigNumber(transaction.value)) !== 0
