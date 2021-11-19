@@ -6,6 +6,8 @@ import {
   Collapsed,
   Container,
   Expanded,
+  Field,
+  Label,
   Toggler,
   TogglerContainer,
 } from "./styles";
@@ -33,14 +35,14 @@ export const Block: FunctionComponent<BlockProps> = ({ block }) => {
       </TogglerContainer>
       {expanded ? (
         <Expanded>
-          <h3>Hash:</h3>
-          <div>{block.hash}</div>
-          <h3>Number:</h3>
-          <div>{block.number}</div>
-          <h3>Gas Used:</h3>
-          <div>{getBigNumber(block.gasUsed)}</div>
-          <h3>Timestamp:</h3>
-          <div>{block.timestamp}</div>
+          <Label>Hash:</Label>
+          <Field>{block.hash}</Field>
+          <Label>Number:</Label>
+          <Field>{block.number}</Field>
+          <Label>Gas Used:</Label>
+          <Field>{getBigNumber(block.gasUsed)}</Field>
+          <Label>Timestamp:</Label>
+          <Field>{block.timestamp}</Field>
           <TransactionsList transactions={transactionsSendingETH} />
         </Expanded>
       ) : (
