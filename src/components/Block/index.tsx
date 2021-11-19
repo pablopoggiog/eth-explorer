@@ -1,6 +1,7 @@
 import { FunctionComponent, useState } from "react";
 import { BlockWithTransactions } from "@ethersproject/abstract-provider";
 import { ethers } from "ethers";
+import { TransactionsList } from "src/components";
 import {
   Collapsed,
   Container,
@@ -36,6 +37,7 @@ export const Block: FunctionComponent<BlockProps> = ({ block }) => {
           <div>{getBigNumber(block.gasUsed)}</div>
           <h3>Timestamp:</h3>
           <div>{block.timestamp}</div>
+          <TransactionsList transactions={block.transactions} />
         </Expanded>
       ) : (
         <Collapsed>{block.hash}</Collapsed>
