@@ -18,6 +18,10 @@ export const Expanded = styled.div`
 export const Collapsed = styled.div`
   padding: 1em;
   transition: 0.5s;
+  max-width: 60vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 export const TogglerContainer = styled.div`
