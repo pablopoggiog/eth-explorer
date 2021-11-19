@@ -37,7 +37,7 @@ export const TransactionModal: FunctionComponent<TransactionModalProps> = ({
               <Field>{transaction.to}</Field>
             </>
           )}
-          <Label>Value Sent:</Label>
+          <Label>ETH Sent:</Label>
           <Field>{getBigNumber(transaction.value)}</Field>
         </Transaction>
       </Container>
