@@ -28,6 +28,8 @@ export const TransactionModal: FunctionComponent<TransactionModalProps> = ({
         <Transaction>
           <Label>Hash:</Label>
           <Field>{transaction.hash}</Field>
+          <Label>Number:</Label>
+          <Field>{transaction.blockNumber}</Field>
           <Label>From:</Label>
           <Field>{transaction.from}</Field>
           {transaction.to && (
