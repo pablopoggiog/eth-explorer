@@ -22,6 +22,10 @@ export const Block: FunctionComponent<BlockProps> = ({ block }) => {
   const getBigNumber = (value: ethers.BigNumber) =>
     ethers.utils.formatEther(value);
 
+  const transactionsSendingETH = block.transactions.filter(
+    (transaction) => Number(getBigNumber(transaction.value)) !== 0
+  );
+
   return (
     <Container>
       <TogglerContainer>
@@ -37,7 +41,7 @@ export const Block: FunctionComponent<BlockProps> = ({ block }) => {
           <div>{getBigNumber(block.gasUsed)}</div>
           <h3>Timestamp:</h3>
           <div>{block.timestamp}</div>
-          <TransactionsList transactions={block.transactions} />
+          <TransactionsList transactions={transactionsSendingETH} />
         </Expanded>
       ) : (
         <Collapsed>{block.hash}</Collapsed>

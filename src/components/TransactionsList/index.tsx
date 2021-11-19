@@ -12,6 +12,7 @@ export const TransactionsList: FunctionComponent<TransactionsListProps> = ({
 }) => (
   <Container>
     <h3>Transactions:</h3>
+          <h5>(only sending ETH)</h5>
     {transactions.map((transaction) => (
       <Transaction key={transaction.hash} transaction={transaction} />
     ))}

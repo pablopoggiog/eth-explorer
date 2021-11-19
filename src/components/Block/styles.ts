@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  cursor: pointer;
   border-radius: 10px;
   transition: 0.5s;
 
@@ -11,7 +10,6 @@ export const Container = styled.div`
 `;
 
 export const Expanded = styled.div`
-  cursor: auto;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -23,6 +21,7 @@ export const Expanded = styled.div`
 
 export const Collapsed = styled.div`
   padding: 1em;
+  transition: 0.5s;
 `;
 
 export const TogglerContainer = styled.div`
