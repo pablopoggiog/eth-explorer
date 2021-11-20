@@ -1,4 +1,5 @@
 import { FunctionComponent, useRef } from "react";
+import { useAlert } from "react-alert";
 import styled from "styled-components";
 import { Button } from "src/components";
 import { copyToClipboard } from "src/utils";
@@ -11,7 +12,10 @@ interface FieldProps {
 export const Field: FunctionComponent<FieldProps> = ({ text }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleCopyToClipboard = () => copyToClipboard(inputRef.current);
+  const alert = useAlert();
+
+  const handleCopyToClipboard = () =>
+    copyToClipboard(inputRef.current, alert.show);
 
   return (
     <FieldContainer>
