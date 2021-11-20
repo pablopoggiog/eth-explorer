@@ -95,7 +95,22 @@ export const EthereumContextProvider: FunctionComponent = ({ children }) => {
           )
         );
       } else {
-        alert.show("Install Metamask!");
+        const installMetamaskMessage = (
+          <>
+            <span>Install Metamask</span>{" "}
+            <a
+              style={{ color: "white" }}
+              target="_blank"
+              rel="noreferrer"
+              href="https://metamask.io/download.html"
+            >
+              here
+            </a>
+            !
+          </>
+        );
+
+        alert.show(installMetamaskMessage);
       }
     } catch (error) {
       console.log(error);
