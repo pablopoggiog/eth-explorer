@@ -54,6 +54,9 @@ const App = () => {
           // an event for the same block twice, duplicating the block in the list.
           // Usually I'd have this validation outside of the setState, but if I used directly latestBlocks (outside of setLatestBlocks) I'd have to include
           // it as dependency of the useCallback, causing subscribeToNewBlocks to be re-created and re-run in its useEffect every time a new block is added.
+          //  My 2 options were: 1. Ignoring depdendencies, going against a React's principle, or
+          // 2. Putting logic inside the setState (setLatestBlocks), that looks horrible to me but I don't remember to have read anything against it.
+          // Happy to know a better solution (and there might be plenty more than 1) if someone finds it!
           const existingNumbers = blocks.map((block) => block.number);
 
           if (!existingNumbers.includes(blockNumber))
