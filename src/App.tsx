@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { BlockWithTransactions } from "@ethersproject/abstract-provider";
 import styled from "styled-components";
-import { BlocksList } from "./components";
+import { BlocksList, Spinner } from "./components";
 import {
   INFURA_WEBSOCKETS_URL,
   INFURA_PROJECT_ID,
@@ -112,7 +112,11 @@ const App = () => {
 
   return (
     <Container>
-      {latestBlocks.length && <BlocksList blocks={latestBlocks} userAddress={userAddress} />}
+      {latestBlocks.length ? (
+        <BlocksList blocks={latestBlocks} userAddress={userAddress} />
+      ) : (
+        <Spinner />
+      )}
     </Container>
   );
 };
