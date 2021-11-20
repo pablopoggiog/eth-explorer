@@ -28,7 +28,7 @@ export const TransactionModal: FunctionComponent<TransactionModalProps> = ({
         <Transaction>
           <Label>Hash:</Label>
           <Field text={transaction.hash} />
-          <Label>Number:</Label>
+          <Label>Block Number:</Label>
           <Field text={String(transaction.blockNumber)} />
           <Label>From:</Label>
           <Field text={transaction.from} />
