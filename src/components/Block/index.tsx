@@ -12,7 +12,8 @@ import {
   ExpandButton,
   Input,
   CheckboxContainer,
-  TimeAgo,Hash
+  TimeAgo,
+  Hash,
 } from "./styles";
 
 interface BlockProps {
@@ -52,6 +53,8 @@ export const Block: FunctionComponent<BlockProps> = ({
           <Field text={block.hash} />
           <Label>Number:</Label>
           <Field text={String(block.number)} />
+          <Label>Miner:</Label>
+          <Field text={block.miner} />
           <Label>Timestamp:</Label>
           <Field text={String(getBlockDate())} />
           <CheckboxContainer>
