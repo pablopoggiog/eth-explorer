@@ -1,12 +1,11 @@
 import { FunctionComponent, useState } from "react";
 import { BlockWithTransactions } from "@ethersproject/abstract-provider";
-import { TransactionsList } from "src/components";
+import { TransactionsList, Field } from "src/components";
 import { getBigNumber } from "src/utils";
 import {
   Collapsed,
   Container,
   Expanded,
-  Field,
   Label,
   ExpandButtonContainer,
   ExpandButton,
@@ -46,11 +45,11 @@ export const Block: FunctionComponent<BlockProps> = ({
       {expanded ? (
         <Expanded>
           <Label>Hash:</Label>
-          <Field>{block.hash}</Field>
+          <Field text={block.hash}/>
           <Label>Number:</Label>
-          <Field>{block.number}</Field>
+          <Field text={String(block.number)}/>
           <Label>Timestamp:</Label>
-          <Field>{block.timestamp}</Field>
+          <Field text={String(block.timestamp)}/>
           <CheckboxContainer>
             <Label>Only transactions from/to me?</Label>
             <Input

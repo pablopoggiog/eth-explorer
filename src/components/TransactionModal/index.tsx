@@ -1,12 +1,12 @@
 import { FunctionComponent } from "react";
 import { TransactionResponse } from "@ethersproject/abstract-provider";
+import { Field } from "src/components";
 import { getBigNumber } from "src/utils";
 import {
   Background,
   CloseButton,
   Container,
   Transaction,
-  Field,
   Label,
 } from "./styles";
 
@@ -27,20 +27,20 @@ export const TransactionModal: FunctionComponent<TransactionModalProps> = ({
         <CloseButton onClick={onClose}>x</CloseButton>
         <Transaction>
           <Label>Hash:</Label>
-          <Field>{transaction.hash}</Field>
+          <Field text={transaction.hash} />
           <Label>Number:</Label>
-          <Field>{transaction.blockNumber}</Field>
+          <Field text={String(transaction.blockNumber)} />
           <Label>From:</Label>
-          <Field>{transaction.from}</Field>
+          <Field text={transaction.from} />
           {transaction.to && (
             <>
               {" "}
               <Label>To:</Label>
-              <Field>{transaction.to}</Field>
+              <Field text={transaction.to} />
             </>
           )}
           <Label>ETH Sent:</Label>
-          <Field>{getBigNumber(transaction.value)}</Field>
+          <Field text={getBigNumber(transaction.value)} />
         </Transaction>
       </Container>
     </Background>

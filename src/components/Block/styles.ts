@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 1em;
   border-radius: 10px;
   transition: 0.5s;
-  width: 100%;
   width: 70vw;
   margin: 1em 0;
   overflow: hidden;
@@ -18,6 +18,7 @@ export const Expanded = styled.div`
   flex-direction: column;
   text-align: center;
   padding: 1em;
+  width: 100%;
   border-radius: 10px;
   transition: 0.5s;
   background-color: rgba(255, 255, 255, 0.1);

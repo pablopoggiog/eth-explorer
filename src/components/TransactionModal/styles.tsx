@@ -22,13 +22,12 @@ export const Background = styled.div<BackgroundProps>`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #363537;
+  background-color: #282c34;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 80%;
   max-width: 500px;
   padding: 1em 1.4em;
-  word-break: break-word;
 `;
 
 export const CloseButton = styled.div`
@@ -46,5 +45,3 @@ export const Transaction = styled.div`
 `;
 
 export const Label = styled.h3``;
-
-export const Field = styled.div``;
