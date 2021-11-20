@@ -1,8 +1,19 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 interface BackgroundProps {
   isOpen: boolean;
 }
+
+const fadeIn = keyframes`
+        0% {
+          opacity: 0;
+          transform: scale(0.90);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      `;
 
 export const Background = styled.div<BackgroundProps>`
   background: rgba(0, 0, 0, 0.86);
@@ -28,6 +39,7 @@ export const Container = styled.div`
   width: 80%;
   max-width: 500px;
   padding: 1em 1.4em;
+  animation: ${fadeIn} 0.3s ease 1;
 `;
 
 export const CloseButton = styled.div`

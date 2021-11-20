@@ -3,10 +3,14 @@ import styled, { keyframes } from "styled-components";
 const fadeIn = keyframes`
         0% {
           opacity: 0;
+          transform: scale(0.90);
+          transform-origin: top right;
         }
 
         100% {
           opacity: 1;
+          transform: scale(1);
+          transform-origin: center;
         }
       `;
 
@@ -31,6 +35,7 @@ export const Expanded = styled.div`
   border-radius: 10px;
   transition: 0.5s;
   background-color: rgba(255, 255, 255, 0.1);
+  animation: ${fadeIn} 0.3s ease 1;
 `;
 
 export const Collapsed = styled.div`
