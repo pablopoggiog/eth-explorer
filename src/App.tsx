@@ -1,11 +1,10 @@
-import { useContext } from "react";
 import styled from "styled-components";
 import banner from "src/assets/banner.png";
-import { EthereumContext } from "src/contexts";
+import { useEthereum } from "src/hooks";
 import { BlocksList, Spinner } from "./components";
 
 const App = () => {
-  const { latestBlocks } = useContext(EthereumContext);
+  const { latestBlocks } = useEthereum();
 
   return (
     <Container>
