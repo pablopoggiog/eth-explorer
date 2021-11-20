@@ -38,6 +38,10 @@ export const Expanded = styled.div`
 export const Collapsed = styled.div`
   padding: 1em;
   transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2em;
 `;
 
 export const ExpandButtonContainer = styled.div`
@@ -69,4 +73,11 @@ export const CheckboxContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1em;
+`;
+
+export const TimeAgo = styled.div`
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.8em;
+  border-radius: 10px;
+  font-size: 0.8em;
 `;

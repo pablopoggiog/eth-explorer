@@ -2,6 +2,7 @@ import { FunctionComponent, useState } from "react";
 import { BlockWithTransactions } from "@ethersproject/abstract-provider";
 import { TransactionsList, Field } from "src/components";
 import { getBigNumber } from "src/utils";
+import { useBlockDate } from "src/hooks";
 import {
   Collapsed,
   Container,
@@ -11,6 +12,7 @@ import {
   ExpandButton,
   Input,
   CheckboxContainer,
+  TimeAgo,
 } from "./styles";
 
 interface BlockProps {
@@ -25,6 +27,8 @@ export const Block: FunctionComponent<BlockProps> = ({
   const [expanded, setExpanded] = useState<boolean>(false);
   const [onlyOwnTransactions, setOnlyOwnTransactions] =
     useState<boolean>(false);
+
+  const { timeAgo, getBlockDate } = useBlockDate(block.timestamp);
 
   const toggle = () => setExpanded(!expanded);
 
@@ -45,11 +49,11 @@ export const Block: FunctionComponent<BlockProps> = ({
       {expanded ? (
         <Expanded>
           <Label>Hash:</Label>
-          <Field text={block.hash}/>
+          <Field text={block.hash} />
           <Label>Number:</Label>
-          <Field text={String(block.number)}/>
+          <Field text={String(block.number)} />
           <Label>Timestamp:</Label>
-          <Field text={String(block.timestamp)}/>
+          <Field text={String(getBlockDate())} />
           <CheckboxContainer>
             <Label>Only transactions from/to me?</Label>
             <Input
@@ -65,7 +69,10 @@ export const Block: FunctionComponent<BlockProps> = ({
           />
         </Expanded>
       ) : (
-        <Collapsed>{block.hash}</Collapsed>
+        <Collapsed>
+          <span>{block.hash}</span>
+          <TimeAgo> {timeAgo} seconds ago</TimeAgo>
+        </Collapsed>
       )}
 
       <ExpandButtonContainer>
