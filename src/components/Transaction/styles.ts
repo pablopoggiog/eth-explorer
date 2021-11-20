@@ -5,6 +5,9 @@ export const Container = styled.div`
   cursor: pointer;
   border-radius: 10px;
   transition: 0.5s;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);

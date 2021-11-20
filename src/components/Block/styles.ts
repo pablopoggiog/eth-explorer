@@ -18,10 +18,9 @@ export const Container = styled.div`
   transition: 0.5s;
   width: 70vw;
   margin: 1em 0;
-  overflow: hidden;
+  animation: ${fadeIn} 1.5s ease 1;
   white-space: nowrap;
   text-overflow: ellipsis;
-  animation: ${fadeIn} 1.5s ease 1;
 `;
 
 export const Expanded = styled.div`
@@ -42,6 +41,7 @@ export const Collapsed = styled.div`
   align-items: center;
   justify-content: space-around;
   gap: 2em;
+  overflow: hidden;
 `;
 
 export const ExpandButtonContainer = styled.div`
