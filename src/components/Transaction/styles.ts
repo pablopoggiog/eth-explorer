@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 1em;
+  padding: 1em 0;
   cursor: pointer;
   border-radius: 10px;
   transition: 0.5s;
