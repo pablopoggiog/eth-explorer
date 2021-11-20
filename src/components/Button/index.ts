@@ -7,7 +7,7 @@ interface ButtonProps {
 
 export const Button = styled.button<ButtonProps>`
   border-radius: ${({ borderRadius }) => borderRadius ?? "5px"};
-  padding: 10px;
+  padding: 0.4em;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   transition: 0.6s;
   text-align: center;
