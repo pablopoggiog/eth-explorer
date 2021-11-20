@@ -1,12 +1,15 @@
 import React from "react";
 import { render } from "react-dom";
+import { EthereumContextProvider } from "src/contexts";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 render(
   <React.StrictMode>
-    <App />
+    <EthereumContextProvider>
+      <App />
+    </EthereumContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
