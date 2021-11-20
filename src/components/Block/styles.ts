@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
   border-radius: 10px;
   transition: 0.5s;
+  width: 100%;
+  width: 70vw;
+  margin: 1em 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 export const Expanded = styled.div`
@@ -18,15 +26,12 @@ export const Expanded = styled.div`
 export const Collapsed = styled.div`
   padding: 1em;
   transition: 0.5s;
-  max-width: 60vw;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 `;
 
 export const ExpandButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+  height: 3.5em;
 `;
 
 export const ExpandButton = styled.div`

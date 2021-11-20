@@ -43,9 +43,6 @@ export const Block: FunctionComponent<BlockProps> = ({
 
   return (
     <Container>
-      <ExpandButtonContainer>
-        <ExpandButton onClick={toggle}>{expanded ? "↑" : "↓"}</ExpandButton>
-      </ExpandButtonContainer>
       {expanded ? (
         <Expanded>
           <Label>Hash:</Label>
@@ -59,7 +56,7 @@ export const Block: FunctionComponent<BlockProps> = ({
             <Input
               type="checkbox"
               onClick={toggleOwnTransactions}
-              checked={onlyOwnTransactions}
+              defaultChecked={onlyOwnTransactions}
             />
           </CheckboxContainer>
           <TransactionsList
@@ -71,6 +68,10 @@ export const Block: FunctionComponent<BlockProps> = ({
       ) : (
         <Collapsed>{block.hash}</Collapsed>
       )}
+
+      <ExpandButtonContainer>
+        <ExpandButton onClick={toggle}>{expanded ? "↑" : "↓"}</ExpandButton>
+      </ExpandButtonContainer>
     </Container>
   );
 };
