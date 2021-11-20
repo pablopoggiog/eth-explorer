@@ -12,7 +12,7 @@ import {
   ExpandButton,
   Input,
   CheckboxContainer,
-  TimeAgo,
+  TimeAgo,Hash
 } from "./styles";
 
 interface BlockProps {
@@ -70,7 +70,7 @@ export const Block: FunctionComponent<BlockProps> = ({
         </Expanded>
       ) : (
         <Collapsed>
-          <span>{block.hash}</span>
+          <Hash>{block.hash}</Hash>
           <TimeAgo> {timeAgo} seconds ago</TimeAgo>
         </Collapsed>
       )}

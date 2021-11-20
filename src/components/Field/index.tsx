@@ -30,6 +30,7 @@ export const FieldContainer = styled.div`
   gap: 1em;
   border: 1px solid white;
   border-radius: 10px;
+  padding: 0 1em;
 `;
 
 export const FieldBase = styled.input`

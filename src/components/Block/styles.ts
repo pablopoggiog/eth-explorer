@@ -16,7 +16,6 @@ export const Container = styled.div`
   gap: 1em;
   border-radius: 10px;
   transition: 0.5s;
-  width: 70vw;
   margin: 1em 0;
   animation: ${fadeIn} 1.5s ease 1;
   white-space: nowrap;
@@ -28,7 +27,7 @@ export const Expanded = styled.div`
   flex-direction: column;
   text-align: center;
   padding: 1em;
-  width: 100%;
+  width: 70vw;
   border-radius: 10px;
   transition: 0.5s;
   background-color: rgba(255, 255, 255, 0.1);
@@ -36,6 +35,7 @@ export const Expanded = styled.div`
 
 export const Collapsed = styled.div`
   padding: 1em;
+  width: 70vw;
   transition: 0.5s;
   display: flex;
   align-items: center;
@@ -80,4 +80,10 @@ export const TimeAgo = styled.div`
   padding: 0.8em;
   border-radius: 10px;
   font-size: 0.8em;
+`;
+
+export const Hash = styled.span`
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
