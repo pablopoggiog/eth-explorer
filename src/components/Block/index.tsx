@@ -1,7 +1,8 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useContext } from "react";
 import { BlockWithTransactions } from "@ethersproject/abstract-provider";
 import { TransactionsList, Field } from "src/components";
 import { getBigNumber } from "src/utils";
+import { EthereumContext } from "src/contexts";
 import { useBlockDate } from "src/hooks";
 import {
   Collapsed,
@@ -18,18 +19,15 @@ import {
 
 interface BlockProps {
   block: BlockWithTransactions;
-  userAddress: string;
 }
 
-export const Block: FunctionComponent<BlockProps> = ({
-  block,
-  userAddress,
-}) => {
+export const Block: FunctionComponent<BlockProps> = ({ block }) => {
   const [expanded, setExpanded] = useState<boolean>(false);
   const [onlyOwnTransactions, setOnlyOwnTransactions] =
     useState<boolean>(false);
 
   const { timeAgo, getBlockDate } = useBlockDate(block.timestamp);
+  const { userAddress } = useContext(EthereumContext);
 
   const toggle = () => setExpanded(!expanded);
 

@@ -5,7 +5,7 @@ import { EthereumContext } from "src/contexts";
 import { BlocksList, Spinner } from "./components";
 
 const App = () => {
-  const { latestBlocks, userAddress } = useContext(EthereumContext);
+  const { latestBlocks } = useContext(EthereumContext);
 
   return (
     <Container>
@@ -15,7 +15,7 @@ const App = () => {
       </HeaderContainer>
       <Body>
         {latestBlocks.length ? (
-          <BlocksList blocks={latestBlocks} userAddress={userAddress} />
+          <BlocksList blocks={latestBlocks} />
         ) : (
           <Spinner />
         )}

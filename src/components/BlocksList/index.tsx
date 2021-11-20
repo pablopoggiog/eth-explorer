@@ -5,16 +5,12 @@ import { Block } from "src/components";
 
 interface BlocksListProps {
   blocks: BlockWithTransactions[];
-  userAddress: string;
 }
 
-export const BlocksList: FunctionComponent<BlocksListProps> = ({
-  blocks,
-  userAddress,
-}) => (
+export const BlocksList: FunctionComponent<BlocksListProps> = ({ blocks }) => (
   <Container>
     {blocks.map((block) => (
-      <Block key={block.hash} block={block} userAddress={userAddress} />
+      <Block key={block.hash} block={block} />
     ))}
   </Container>
 );
