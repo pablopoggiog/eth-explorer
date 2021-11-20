@@ -14,6 +14,7 @@ type WebSocketProvider = ethers.providers.WebSocketProvider;
 const App = () => {
   const [latestBlocks, setLatestBlocks] = useState<BlockWithTransactions[]>([]);
   const [provider, setProvider] = useState<WebSocketProvider | null>(null);
+  const [address, setAddress] = useState<string>("");
 
   const getLatestBlocks = useCallback(async () => {
     try {
@@ -76,6 +77,24 @@ const App = () => {
       console.log("Ethereum object doesn't exist!");
     }
   }, []);
+
+  const connectWallet = useCallback(async () => {
+    try {
+      const { ethereum } = window;
+
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+
+      setAddress(accounts[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    connectWallet();
+  }, [connectWallet]);
 
   useEffect(() => {
     connectWithProvider();
