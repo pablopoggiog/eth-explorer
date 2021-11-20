@@ -8,16 +8,24 @@ import {
   Expanded,
   Field,
   Label,
-  Toggler,
-  TogglerContainer,
+  ExpandButtonContainer,
+  ExpandButton,
+  Input,
+  CheckboxContainer,
 } from "./styles";
 
 interface BlockProps {
   block: BlockWithTransactions;
+  userAddress: string;
 }
 
-export const Block: FunctionComponent<BlockProps> = ({ block }) => {
+export const Block: FunctionComponent<BlockProps> = ({
+  block,
+  userAddress,
+}) => {
   const [expanded, setExpanded] = useState<boolean>(false);
+  const [onlyOwnTransactions, setOnlyOwnTransactions] =
+    useState<boolean>(false);
 
   const toggle = () => setExpanded(!expanded);
 
@@ -25,11 +33,19 @@ export const Block: FunctionComponent<BlockProps> = ({ block }) => {
     (transaction) => Number(getBigNumber(transaction.value)) !== 0
   );
 
+  const ownTransactions = transactionsSendingETH.filter(
+    (transaction) =>
+      transaction.from === userAddress || transaction.to === userAddress
+  );
+
+  const toggleOwnTransactions = () =>
+    setOnlyOwnTransactions(!onlyOwnTransactions);
+
   return (
     <Container>
-      <TogglerContainer>
-        <Toggler onClick={toggle}>{expanded ? "↑" : "↓"}</Toggler>
-      </TogglerContainer>
+      <ExpandButtonContainer>
+        <ExpandButton onClick={toggle}>{expanded ? "↑" : "↓"}</ExpandButton>
+      </ExpandButtonContainer>
       {expanded ? (
         <Expanded>
           <Label>Hash:</Label>
@@ -38,7 +54,19 @@ export const Block: FunctionComponent<BlockProps> = ({ block }) => {
           <Field>{block.number}</Field>
           <Label>Timestamp:</Label>
           <Field>{block.timestamp}</Field>
-          <TransactionsList transactions={transactionsSendingETH} />
+          <CheckboxContainer>
+            <Label>Only transactions from/to me?</Label>
+            <Input
+              type="checkbox"
+              onClick={toggleOwnTransactions}
+              checked={onlyOwnTransactions}
+            />
+          </CheckboxContainer>
+          <TransactionsList
+            transactions={
+              onlyOwnTransactions ? ownTransactions : transactionsSendingETH
+            }
+          />
         </Expanded>
       ) : (
         <Collapsed>{block.hash}</Collapsed>

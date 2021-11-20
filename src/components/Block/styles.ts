@@ -24,12 +24,12 @@ export const Collapsed = styled.div`
   text-overflow: ellipsis;
 `;
 
-export const TogglerContainer = styled.div`
+export const ExpandButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
 
-export const Toggler = styled.div`
+export const ExpandButton = styled.div`
   display: flex;
   justify-content: center;
   width: 1.5em;
@@ -44,3 +44,12 @@ export const Toggler = styled.div`
 export const Label = styled.h3``;
 
 export const Field = styled.div``;
+
+export const Input = styled.input``;
+
+export const CheckboxContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+`;

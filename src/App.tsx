@@ -14,7 +14,7 @@ type WebSocketProvider = ethers.providers.WebSocketProvider;
 const App = () => {
   const [latestBlocks, setLatestBlocks] = useState<BlockWithTransactions[]>([]);
   const [provider, setProvider] = useState<WebSocketProvider | null>(null);
-  const [address, setAddress] = useState<string>("");
+  const [userAddress, setUserAddress] = useState<string>("");
 
   const getLatestBlocks = useCallback(async () => {
     try {
@@ -86,7 +86,7 @@ const App = () => {
         method: "eth_requestAccounts",
       });
 
-      setAddress(accounts[0]);
+      setUserAddress(accounts[0]);
     } catch (error) {
       console.log(error);
     }
@@ -112,7 +112,7 @@ const App = () => {
 
   return (
     <Container>
-      {latestBlocks.length && <BlocksList blocks={latestBlocks} />}
+      {latestBlocks.length && <BlocksList blocks={latestBlocks} userAddress={userAddress} />}
     </Container>
   );
 };
