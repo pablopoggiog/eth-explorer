@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/eth-explorer/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/eth-explorer/static/js/main.e83cc1ee.chunk.js",
-    "main.js.map": "/eth-explorer/static/js/main.e83cc1ee.chunk.js.map",
+    "main.js": "/eth-explorer/static/js/main.c44ebd24.chunk.js",
+    "main.js.map": "/eth-explorer/static/js/main.c44ebd24.chunk.js.map",
     "runtime-main.js": "/eth-explorer/static/js/runtime-main.5f4f6d81.js",
     "runtime-main.js.map": "/eth-explorer/static/js/runtime-main.5f4f6d81.js.map",
-    "static/js/2.e0fc72eb.chunk.js": "/eth-explorer/static/js/2.e0fc72eb.chunk.js",
-    "static/js/2.e0fc72eb.chunk.js.map": "/eth-explorer/static/js/2.e0fc72eb.chunk.js.map",
+    "static/js/2.0847d519.chunk.js": "/eth-explorer/static/js/2.0847d519.chunk.js",
+    "static/js/2.0847d519.chunk.js.map": "/eth-explorer/static/js/2.0847d519.chunk.js.map",
     "static/js/3.e0d16fdb.chunk.js": "/eth-explorer/static/js/3.e0d16fdb.chunk.js",
     "static/js/3.e0d16fdb.chunk.js.map": "/eth-explorer/static/js/3.e0d16fdb.chunk.js.map",
     "index.html": "/eth-explorer/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/eth-explorer/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.e0fc72eb.chunk.js.LICENSE.txt": "/eth-explorer/static/js/2.e0fc72eb.chunk.js.LICENSE.txt",
+    "static/js/2.0847d519.chunk.js.LICENSE.txt": "/eth-explorer/static/js/2.0847d519.chunk.js.LICENSE.txt",
     "static/media/copy.0683a556.svg": "/eth-explorer/static/media/copy.0683a556.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5f4f6d81.js",
-    "static/js/2.e0fc72eb.chunk.js",
+    "static/js/2.0847d519.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.e83cc1ee.chunk.js"
+    "static/js/main.c44ebd24.chunk.js"
   ]
 }
