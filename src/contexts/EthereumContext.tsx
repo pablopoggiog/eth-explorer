@@ -6,12 +6,17 @@ import {
   createContext,
 } from "react";
 import { ethers } from "ethers";
+import { useAlert } from "react-alert";
 import {
   INFURA_WEBSOCKETS_URL,
   INFURA_PROJECT_ID,
   INFURA_NETWORK,
 } from "src/constants";
-import { EthereumContextReturn, BlockWithTransactions, WebSocketProvider } from "src/types";
+import {
+  EthereumContextReturn,
+  BlockWithTransactions,
+  WebSocketProvider,
+} from "src/types";
 
 export const EthereumContext = createContext<EthereumContextReturn>(
   {} as EthereumContextReturn
@@ -21,6 +26,8 @@ export const EthereumContextProvider: FunctionComponent = ({ children }) => {
   const [latestBlocks, setLatestBlocks] = useState<BlockWithTransactions[]>([]);
   const [provider, setProvider] = useState<WebSocketProvider | null>(null);
   const [userAddress, setUserAddress] = useState<string>("");
+
+  const alert = useAlert();
 
   const getLatestBlocks = useCallback(async () => {
     try {
@@ -88,12 +95,12 @@ export const EthereumContextProvider: FunctionComponent = ({ children }) => {
           )
         );
       } else {
-        console.log("Ethereum object doesn't exist!");
+        alert.show("Install Metamask!");
       }
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [alert]);
 
   const connectWallet = useCallback(async () => {
     try {
