@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { BlockWithTransactions } from "@ethersproject/abstract-provider";
 import styled from "styled-components";
+import banner from "src/assets/banner.png";
 import { BlocksList, Spinner } from "./components";
 import {
   INFURA_WEBSOCKETS_URL,
@@ -112,11 +113,17 @@ const App = () => {
 
   return (
     <Container>
-      {latestBlocks.length ? (
-        <BlocksList blocks={latestBlocks} userAddress={userAddress} />
-      ) : (
-        <Spinner />
-      )}
+      <HeaderContainer>
+        <Image src={banner} />
+        <Text>Eth Explorer</Text>
+      </HeaderContainer>
+      <Body>
+        {latestBlocks.length ? (
+          <BlocksList blocks={latestBlocks} userAddress={userAddress} />
+        ) : (
+          <Spinner />
+        )}
+      </Body>
     </Container>
   );
 };
@@ -128,6 +135,37 @@ const Container = styled.div`
   background-color: #282c34;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const HeaderContainer = styled.div`
+  margin: 3em 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  height: 200px;
+`;
+
+const Image = styled.img`
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+`;
+
+const Text = styled.h1`
+  text-shadow: 1px 1px 5px white;
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+  margin-top: 1.68em;
+  width: 10em;
+  font-size: 1.8em;
+`;
+
+const Body = styled.div`
+  margin-top: 20em;
 `;
