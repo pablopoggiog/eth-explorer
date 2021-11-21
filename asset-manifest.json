@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/eth-explorer/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/eth-explorer/static/js/main.8efdab71.chunk.js",
-    "main.js.map": "/eth-explorer/static/js/main.8efdab71.chunk.js.map",
+    "main.js": "/eth-explorer/static/js/main.a3b09521.chunk.js",
+    "main.js.map": "/eth-explorer/static/js/main.a3b09521.chunk.js.map",
     "runtime-main.js": "/eth-explorer/static/js/runtime-main.aec88d71.js",
     "runtime-main.js.map": "/eth-explorer/static/js/runtime-main.aec88d71.js.map",
     "static/js/2.9c877a8b.chunk.js": "/eth-explorer/static/js/2.9c877a8b.chunk.js",
@@ -13,12 +13,13 @@
     "static/css/main.6dea0f05.chunk.css.map": "/eth-explorer/static/css/main.6dea0f05.chunk.css.map",
     "static/js/2.9c877a8b.chunk.js.LICENSE.txt": "/eth-explorer/static/js/2.9c877a8b.chunk.js.LICENSE.txt",
     "static/media/banner.be8a9f49.png": "/eth-explorer/static/media/banner.be8a9f49.png",
+    "static/media/close.0c6296a1.png": "/eth-explorer/static/media/close.0c6296a1.png",
     "static/media/copy.0683a556.svg": "/eth-explorer/static/media/copy.0683a556.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.aec88d71.js",
     "static/js/2.9c877a8b.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.8efdab71.chunk.js"
+    "static/js/main.a3b09521.chunk.js"
   ]
 }
