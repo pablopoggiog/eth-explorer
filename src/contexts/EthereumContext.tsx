@@ -12,18 +12,14 @@ import {
   INFURA_PROJECT_ID,
   INFURA_NETWORK,
 } from "src/constants";
-import {
-  EthereumContextReturn,
-  BlockWithTransactions,
-  WebSocketProvider,
-} from "src/types";
+import { EthereumContextReturn, Block, WebSocketProvider } from "src/types";
 
 export const EthereumContext = createContext<EthereumContextReturn>(
   {} as EthereumContextReturn
 );
 
 export const EthereumContextProvider: FunctionComponent = ({ children }) => {
-  const [latestBlocks, setLatestBlocks] = useState<BlockWithTransactions[]>([]);
+  const [latestBlocks, setLatestBlocks] = useState<Block[]>([]);
   const [provider, setProvider] = useState<WebSocketProvider | null>(null);
   const [userAddress, setUserAddress] = useState<string>("");
 
