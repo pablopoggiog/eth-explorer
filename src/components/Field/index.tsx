@@ -19,19 +19,25 @@ export const Field: FunctionComponent<FieldProps> = ({ label, text }) => {
     copyToClipboard(inputRef.current, alert.show);
 
   return (
-    <>
+    <Container>
       <Label htmlFor={label}>{label}</Label>
-      <FieldContainer>
-        <FieldBase id={label} readOnly ref={inputRef} value={text} />
+      <InputContainer>
+        <Input id={label} readOnly ref={inputRef} value={text} />
         <Button onClick={handleCopyToClipboard}>
           <Icon src={copyIcon} />
         </Button>
-      </FieldContainer>
-    </>
+      </InputContainer>
+    </Container>
   );
 };
 
-export const FieldContainer = styled.div`
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+`;
+
+export const InputContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -41,7 +47,7 @@ export const FieldContainer = styled.div`
   padding: 0 1em;
 `;
 
-export const FieldBase = styled.input`
+export const Input = styled.input`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -62,4 +68,7 @@ export const Icon = styled.img`
   height: 1em;
 `;
 
-export const Label = styled.label``;
+export const Label = styled.label`
+  font-size: 1.1em;
+  font-weight: 500;
+`;

@@ -54,4 +54,7 @@ export const CloseButton = styled.div`
 
 export const Transaction = styled.div`
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 `;
