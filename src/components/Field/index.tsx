@@ -20,9 +20,9 @@ export const Field: FunctionComponent<FieldProps> = ({ label, text }) => {
 
   return (
     <>
-      <Label>{label}</Label>
+      <Label htmlFor={label}>{label}</Label>
       <FieldContainer>
-        <FieldBase readOnly ref={inputRef} value={text} />
+        <FieldBase id={label} readOnly ref={inputRef} value={text} />
         <Button onClick={handleCopyToClipboard}>
           <Icon src={copyIcon} />
         </Button>
