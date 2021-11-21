@@ -17,7 +17,6 @@ export const useBlockDate: UseBlockDate = (timestamp) => {
 
   useEffect(() => {
     const time = new Date(timestamp * 1000);
-    console.log({ currentTime });
     const result = Math.round((currentTime.getTime() - time.getTime()) / 1000);
     setTimeAgo(result);
   }, [timeAgo, timestamp, currentTime]);
