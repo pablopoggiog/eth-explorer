@@ -49,7 +49,7 @@ export const Block: FunctionComponent<BlockProps> = ({ block }) => {
           <Field label="Hash:" text={block.hash} />
           <Field label="Number:" text={String(block.number)} />
           <Field label="Miner:" text={block.miner} />
-          <Field label="Timestamp:" text={String(getBlockDate())} />
+          <Field label="Timestamp:" text={getBlockDate()} />
           <CheckboxContainer>
             <Label>Only transactions from/to me?</Label>
             <Input

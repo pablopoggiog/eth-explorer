@@ -22,7 +22,7 @@ export interface EthereumContextReturn {
 
 export interface UseBlockDateReturn {
   timeAgo: number;
-  getBlockDate: () => Date;
+  getBlockDate: () => string;
 }
 
 export type UseBlockDate = (timestamp: number) => UseBlockDateReturn;
