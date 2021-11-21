@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import { TransactionResponse } from "@ethersproject/abstract-provider";
 import { Field } from "src/components";
+import closeIcon from "src/assets/close.png";
 import { getBigNumber } from "src/utils";
 import { Background, CloseButton, Container, Transaction } from "./styles";
 
@@ -18,7 +19,7 @@ export const TransactionModal: FunctionComponent<TransactionModalProps> = ({
   return (
     <Background isOpen={isOpen}>
       <Container>
-        <CloseButton onClick={onClose}>x</CloseButton>
+        <CloseButton src={closeIcon} onClick={onClose} />
         <Transaction>
           <Field label="Hash:" text={transaction.hash} />
           <Field label="Block Number:" text={String(transaction.blockNumber)} />

@@ -42,10 +42,11 @@ export const Container = styled.div`
   animation: ${fadeIn} 0.3s ease 1;
 `;
 
-export const CloseButton = styled.div`
+export const CloseButton = styled.img`
   align-self: flex-end;
   cursor: pointer;
   transition: 0.3s;
+  width: 3.5em;
 
   &:hover {
     transform: scale(1.2);
