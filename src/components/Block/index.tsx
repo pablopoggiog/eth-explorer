@@ -46,14 +46,10 @@ export const Block: FunctionComponent<BlockProps> = ({ block }) => {
     <Container>
       {expanded ? (
         <Expanded>
-          <Label>Hash:</Label>
-          <Field text={block.hash} />
-          <Label>Number:</Label>
-          <Field text={String(block.number)} />
-          <Label>Miner:</Label>
-          <Field text={block.miner} />
-          <Label>Timestamp:</Label>
-          <Field text={String(getBlockDate())} />
+          <Field label="Hash:" text={block.hash} />
+          <Field label="Number:" text={String(block.number)} />
+          <Field label="Miner:" text={block.miner} />
+          <Field label="Timestamp:" text={String(getBlockDate())} />
           <CheckboxContainer>
             <Label>Only transactions from/to me?</Label>
             <Input

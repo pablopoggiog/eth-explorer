@@ -55,5 +55,3 @@ export const CloseButton = styled.div`
 export const Transaction = styled.div`
   padding: 1em;
 `;
-
-export const Label = styled.h3``;

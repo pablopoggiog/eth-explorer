@@ -6,10 +6,11 @@ import { copyToClipboard } from "src/utils";
 import copyIcon from "src/assets/copy.svg";
 
 interface FieldProps {
+  label: string;
   text: string;
 }
 
-export const Field: FunctionComponent<FieldProps> = ({ text }) => {
+export const Field: FunctionComponent<FieldProps> = ({ label, text }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const alert = useAlert();
@@ -18,12 +19,15 @@ export const Field: FunctionComponent<FieldProps> = ({ text }) => {
     copyToClipboard(inputRef.current, alert.show);
 
   return (
-    <FieldContainer>
-      <FieldBase readOnly ref={inputRef} value={text} />
-      <Button onClick={handleCopyToClipboard}>
-        <Icon src={copyIcon} />
-      </Button>
-    </FieldContainer>
+    <>
+      <Label>{label}</Label>
+      <FieldContainer>
+        <FieldBase readOnly ref={inputRef} value={text} />
+        <Button onClick={handleCopyToClipboard}>
+          <Icon src={copyIcon} />
+        </Button>
+      </FieldContainer>
+    </>
   );
 };
 
@@ -57,3 +61,5 @@ export const Icon = styled.img`
   width: 1em;
   height: 1em;
 `;
+
+export const Label = styled.label``;

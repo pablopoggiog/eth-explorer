@@ -26,21 +26,16 @@ export const TransactionModal: FunctionComponent<TransactionModalProps> = ({
       <Container>
         <CloseButton onClick={onClose}>x</CloseButton>
         <Transaction>
-          <Label>Hash:</Label>
-          <Field text={transaction.hash} />
-          <Label>Block Number:</Label>
-          <Field text={String(transaction.blockNumber)} />
-          <Label>From:</Label>
-          <Field text={transaction.from} />
+          <Field label="Hash:" text={transaction.hash} />
+          <Field label="Block Number:" text={String(transaction.blockNumber)} />
+          <Field label="From:" text={transaction.from} />
           {transaction.to && (
             <>
               {" "}
-              <Label>To:</Label>
-              <Field text={transaction.to} />
+              <Field label="To:" text={transaction.to} />
             </>
           )}
-          <Label>ETH Sent:</Label>
-          <Field text={getBigNumber(transaction.value)} />
+          <Field label="ETH Sent:" text={getBigNumber(transaction.value)} />
         </Transaction>
       </Container>
     </Background>
