@@ -19,3 +19,10 @@ export interface EthereumContextReturn {
   latestBlocks: any[];
   userAddress: string;
 }
+
+export interface UseBlockDateReturn {
+  timeAgo: number;
+  getBlockDate: () => Date;
+}
+
+export type UseBlockDate = (timestamp: number) => UseBlockDateReturn;

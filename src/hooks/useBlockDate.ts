@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { UseBlockDate } from "src/types";
 
-export const useBlockDate = (timestamp: number) => {
+export const useBlockDate: UseBlockDate = (timestamp) => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [timeAgo, setTimeAgo] = useState(0);
 
