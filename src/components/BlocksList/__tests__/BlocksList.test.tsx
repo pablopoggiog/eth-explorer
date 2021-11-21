@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { BlockWithTransactions } from "@ethersproject/abstract-provider";
+import { Block as BlockInterface } from "src/types";
 import { BlocksList } from "..";
 
 describe("BlocksList", () => {
@@ -134,4 +134,4 @@ export const fakeBlocks = [
       hex: "0x272555a30aab24",
     },
   },
-] as unknown as BlockWithTransactions[];
+] as unknown as BlockInterface[];

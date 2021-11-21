@@ -1,10 +1,10 @@
 import { FunctionComponent, useState } from "react";
-import { TransactionResponse } from "@ethersproject/abstract-provider";
+import { Transaction as TransactionInterface } from "src/types";
 import { TransactionModal } from "src/components";
 import { Container } from "./styles";
 
 interface TransactionProps {
-  transaction: TransactionResponse;
+  transaction: TransactionInterface;
 }
 
 export const Transaction: FunctionComponent<TransactionProps> = ({

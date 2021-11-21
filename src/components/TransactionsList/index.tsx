@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
-import { TransactionResponse } from "@ethersproject/abstract-provider";
+import { Transaction as TransactionInterface } from "src/types";
 import { Container } from "./styles";
 import { Transaction } from "src/components";
 
 interface TransactionsListProps {
-  transactions: TransactionResponse[];
+  transactions: TransactionInterface[];
 }
 
 export const TransactionsList: FunctionComponent<TransactionsListProps> = ({

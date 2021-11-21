@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { TransactionResponse } from "@ethersproject/abstract-provider";
+import { Transaction as TransactionInterface } from "src/types";
 import { getBigNumber } from "src/utils";
 import { TransactionModal } from "..";
 
@@ -62,4 +62,4 @@ export const fakeTransaction = {
   chainId: 1,
   value: { _hex: "0x2f2f39fc6c540000", _isBigNumber: true },
   wait: jest.fn(),
-} as unknown as TransactionResponse;
+} as unknown as TransactionInterface;

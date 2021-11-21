@@ -1,7 +1,7 @@
 import { FunctionComponent, useState } from "react";
-import { BlockWithTransactions } from "@ethersproject/abstract-provider";
 import { TransactionsList, Field } from "src/components";
 import { getBigNumber } from "src/utils";
+import { Block as BlockInterface } from "src/types";
 import { useBlockDate, useEthereum } from "src/hooks";
 import {
   Collapsed,
@@ -17,7 +17,7 @@ import {
 } from "./styles";
 
 interface BlockProps {
-  block: BlockWithTransactions;
+  block: BlockInterface;
 }
 
 export const Block: FunctionComponent<BlockProps> = ({ block }) => {

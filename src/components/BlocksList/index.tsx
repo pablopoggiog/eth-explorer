@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
-import { BlockWithTransactions } from "@ethersproject/abstract-provider";
+import { Block as BlockInterface } from "src/types";
 import { Container } from "./styles";
 import { Block } from "src/components";
 
 interface BlocksListProps {
-  blocks: BlockWithTransactions[];
+  blocks: BlockInterface[];
 }
 
 export const BlocksList: FunctionComponent<BlocksListProps> = ({ blocks }) => (

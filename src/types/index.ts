@@ -1,5 +1,8 @@
 import { ethers } from "ethers";
-import { BlockWithTransactions as EthersBlockWithTransactions } from "@ethersproject/abstract-provider";
+import {
+  BlockWithTransactions as EthersBlockWithTransactions,
+  TransactionResponse as EthersTransaction,
+} from "@ethersproject/abstract-provider";
 
 declare global {
   interface Window {
@@ -9,7 +12,8 @@ declare global {
 
 export type WebSocketProvider = ethers.providers.WebSocketProvider;
 
-export type BlockWithTransactions = EthersBlockWithTransactions;
+export type Block = EthersBlockWithTransactions;
+export type Transaction = EthersTransaction;
 
 export interface EthereumContextReturn {
   latestBlocks: any[];
