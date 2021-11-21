@@ -30,10 +30,6 @@ export const TransactionsList: FunctionComponent<TransactionsListProps> = ({
     setAddressToFilterBy(onlyConnectedWallet ? userAddress : inputAddress);
   }, [onlyConnectedWallet, inputAddress, userAddress]);
 
-  useEffect(() => {
-    console.log({ addressToFilterBy });
-  }, [addressToFilterBy]);
-
   const updateInputAddress = (event: FormEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
     setInputAddress(value);
