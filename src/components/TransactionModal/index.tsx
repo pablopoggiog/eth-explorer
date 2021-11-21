@@ -2,13 +2,7 @@ import { FunctionComponent } from "react";
 import { TransactionResponse } from "@ethersproject/abstract-provider";
 import { Field } from "src/components";
 import { getBigNumber } from "src/utils";
-import {
-  Background,
-  CloseButton,
-  Container,
-  Transaction,
-  Label,
-} from "./styles";
+import { Background, CloseButton, Container, Transaction } from "./styles";
 
 interface TransactionModalProps {
   isOpen: boolean;
