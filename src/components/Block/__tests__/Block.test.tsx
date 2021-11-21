@@ -6,24 +6,30 @@ import { Block } from "..";
 jest.mock("react-alert");
 
 describe("Block", () => {
-  it("displays the correct hash when a block is provided", () => {
+  beforeAll(() => {
     render(<Block block={fakeBlock} />);
+  });
 
+  it("displays the correct hash when a block is provided", () => {
     const renderedHash = screen.getByText(fakeBlock.hash);
 
     expect(renderedHash).toBeInTheDocument();
   });
 
   it("expands the component to show more details for the block, when clicking on the expand button (↓)", () => {
+    const { hash, number, miner } = fakeBlock;
+    const fields = [hash, number, miner];
+
     render(<Block block={fakeBlock} />);
 
     const expandButton = screen.getByText("↓");
 
     userEvent.click(expandButton);
 
-    const expandedBlock = screen.getByDisplayValue(fakeBlock.number);
-
-    expect(expandedBlock).toBeInTheDocument();
+    fields.forEach((field) => {
+      const fieldInExpandedBlock = screen.getByDisplayValue(String(field));
+      expect(fieldInExpandedBlock).toBeInTheDocument();
+    });
   });
 });
 
