@@ -76,15 +76,6 @@ export const Label = styled.h3``;
 
 export const Field = styled.div``;
 
-export const Input = styled.input``;
-
-export const CheckboxContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-`;
-
 export const TimeAgo = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
   padding: 0.8em;

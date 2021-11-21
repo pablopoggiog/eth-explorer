@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div``;
+
+export const Hash = styled.p`
   padding: 1em 0;
   cursor: pointer;
   border-radius: 10px;
