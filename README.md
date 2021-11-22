@@ -48,7 +48,7 @@ Launches the test runner in the interactive watch mode.\
     - Number
     - Miner
     - Timestamp (transformed to a more readable format)
-    - Transactions (by default it displays all the transactions sending ETH, you can click on the checkbox saying "Only transactions from/to me?" to filter out all the rest of them and keep the ones where you are either the sender or receiver.
+    - Transactions. By default it displays all the transactions sending ETH, there's a field to enter an address to filter by (whether is the sender or receiver) or if you've connected your Metamask wallet you'll be able to click on the checkbox saying "Only transactions from/to me?", to filter by your wallet's address. Otherwise, if there's not a wallet connected yet, it'll show a button to connect one.
 
 4. Clicking on a transaction, it'll open a modal showing more data for that specific transaction.
 
