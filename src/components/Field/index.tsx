@@ -11,6 +11,7 @@ interface FieldProps {
   onChange?: (event: FormEvent<HTMLInputElement>) => void;
   readOnly?: boolean;
   disabled?: boolean;
+  placeholder?: string;
 }
 
 export const Field: FunctionComponent<FieldProps> = ({
@@ -19,6 +20,7 @@ export const Field: FunctionComponent<FieldProps> = ({
   onChange,
   readOnly = true,
   disabled = true,
+  placeholder,
 }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -37,6 +39,7 @@ export const Field: FunctionComponent<FieldProps> = ({
           onChange={onChange}
           ref={inputRef}
           value={text}
+          placeholder={placeholder}
         />
         <Button onClick={handleCopyToClipboard}>
           <Icon src={copyIcon} />

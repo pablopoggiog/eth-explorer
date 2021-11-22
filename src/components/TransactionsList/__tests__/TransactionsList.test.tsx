@@ -1,9 +1,17 @@
 import { render, screen } from "@testing-library/react";
+import { cleanup } from "@testing-library/react-hooks";
+import userEvent from "@testing-library/user-event";
 import { Transaction as TransactionInterface } from "src/types";
 import { TransactionsList } from "..";
 
+const userAddress = "0x1Ac6A0B503B51f8B56871c61a6D1aba2e25372b1";
+
 jest.mock("src/components/Field", () => ({
   Field: () => <></>,
+}));
+
+jest.mock("src/hooks", () => ({
+  useEthereum: () => ({ userAddress }),
 }));
 
 describe("TransactionsList", () => {
@@ -15,6 +23,35 @@ describe("TransactionsList", () => {
       expect(renderedHash).toBeInTheDocument();
     });
   });
+
+  it("only shows transactions coming from/going to the user's connected wallet address, when checking 'Only from/to connected wallet?'", () => {
+    render(<TransactionsList transactions={fakeTransactions} />);
+
+    const checkbox = screen.getByRole("checkbox");
+    userEvent.click(checkbox);
+
+    const transactionFromUser = screen.getByText(fakeTransactions[0].hash);
+    const otherTransaction = screen.queryByText(fakeTransactions[1].hash);
+
+    expect(transactionFromUser).toBeInTheDocument();
+    expect(otherTransaction).not.toBeInTheDocument();
+  });
+
+  // TO DO: make this work 😢 either by placeholder, htmlFor, aria-labelledby, etc
+
+  // it("only shows transactions coming from/going to an address that the user enters in the input with label 'Filter by address:'", () => {
+  //   render(<TransactionsList transactions={fakeTransactions} />);
+  //   screen.debug();
+
+  //   const input = screen.queryByPlaceholderText(/Enter an address.../i);
+  //   if (input) userEvent.type(input, userAddress);
+
+  //   const transactionFromUser = screen.getByText(fakeTransactions[0].hash);
+  //   const otherTransaction = screen.queryByText(fakeTransactions[1].hash);
+
+  //   expect(transactionFromUser).toBeInTheDocument();
+  //   expect(otherTransaction).not.toBeInTheDocument();
+  // });
 });
 
 export const fakeTransactions = [

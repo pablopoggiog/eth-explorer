@@ -61,6 +61,7 @@ export const TransactionsList: FunctionComponent<TransactionsListProps> = ({
           disabled={onlyConnectedWallet}
           onChange={updateInputAddress}
           readOnly={false}
+          placeholder={!onlyConnectedWallet ? "Enter an address..." : ""}
         />
       </AddressFilterContainer>
       <CheckboxContainer>
