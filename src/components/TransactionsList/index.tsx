@@ -2,12 +2,12 @@ import { FunctionComponent, useState, FormEvent, useEffect } from "react";
 import { Transaction as TransactionInterface } from "src/types";
 import { getBigNumber } from "src/utils";
 import { useEthereum } from "src/hooks";
-import { Transaction, Field } from "src/components";
+import { Transaction, Field, Button } from "src/components";
 import {
   Container,
   Label,
   Note,
-  Input,
+  Checkbox,
   CheckboxContainer,
   AddressFilterContainer,
 } from "./styles";
@@ -24,7 +24,7 @@ export const TransactionsList: FunctionComponent<TransactionsListProps> = ({
     useState<boolean>(false);
   const [addressToFilterBy, setAddressToFilterBy] = useState("");
 
-  const { userAddress } = useEthereum();
+  const { userAddress, connectWallet } = useEthereum();
 
   useEffect(() => {
     setAddressToFilterBy(onlyConnectedWallet ? userAddress : inputAddress);
@@ -65,12 +65,21 @@ export const TransactionsList: FunctionComponent<TransactionsListProps> = ({
         />
       </AddressFilterContainer>
       <CheckboxContainer>
-        <Label>Only from/to connected wallet?</Label>
-        <Input
-          type="checkbox"
-          onClick={toggleOwnTransactions}
-          defaultChecked={onlyConnectedWallet}
-        />
+        {userAddress ? (
+          <>
+            <Label>Only from/to connected wallet?</Label>
+            <Checkbox
+              type="checkbox"
+              onClick={toggleOwnTransactions}
+              defaultChecked={onlyConnectedWallet}
+              disabled={!userAddress}
+            />
+          </>
+        ) : (
+          <Button onClick={connectWallet}>
+            Connect a Metamask Wallet and filter by it!
+          </Button>
+        )}
       </CheckboxContainer>
       {filteredTransactions.map((transaction) => (
         <Transaction key={transaction.hash} transaction={transaction} />

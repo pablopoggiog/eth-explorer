@@ -18,6 +18,7 @@ export type Transaction = EthersTransaction;
 export interface EthereumContextReturn {
   latestBlocks: any[];
   userAddress: string;
+  connectWallet: () => void;
 }
 
 export interface UseBlockDateReturn {

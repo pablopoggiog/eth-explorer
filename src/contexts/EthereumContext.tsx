@@ -146,7 +146,7 @@ export const EthereumContextProvider: FunctionComponent = ({ children }) => {
   }, [subscribeToNewBlocks]);
 
   return (
-    <EthereumContext.Provider value={{ latestBlocks, userAddress }}>
+    <EthereumContext.Provider value={{ latestBlocks, userAddress, connectWallet }}>
       {children}
     </EthereumContext.Provider>
   );

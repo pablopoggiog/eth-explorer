@@ -13,7 +13,7 @@ export const Note = styled.p`
   font-size: 0.9em;
 `;
 
-export const Input = styled.input``;
+export const Checkbox = styled.input``;
 
 export const CheckboxContainer = styled.div`
   display: flex;
